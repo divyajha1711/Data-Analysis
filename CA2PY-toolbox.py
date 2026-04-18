@@ -124,9 +124,8 @@ plt.plot(year_analysis.index, year_analysis.values,
 plt.title("Year-wise Dissolved Oxygen Trend", color='darkblue')
 plt.xlabel("Year", color='green')
 plt.ylabel("Average DO", color='green')
-plt.grid(True, linestyle='--', alpha=0.6)  # optional but improves look
-plt.show()
-#the graph is this way because their is no entry of the year 2015
+plt.grid(True, linestyle='--', alpha=0.6)  # optional but improves visuals
+plt.show()  #the graph is this way because their is no entry of the year 2015
 data["Year"].value_counts() #tells me how many entries per year
 
 #OBJECTIVE 5: Outlier Detection using Boxplot
