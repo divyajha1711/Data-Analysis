@@ -92,7 +92,7 @@ plt.show()
 # the correlation among them is weak.
 
 
-#OBJECTIVE 3:Implementation of Linear Regression for Predictive Analysis
+#OBJECTIVE 3:Implementation of Linear Regression for Predictive Analysis among water temp and dissolved oxygen
 # Prepare data
 X = data[["Water_Temp"]].dropna()
 y = data.loc[X.index, "DissolvedOxygen"]
@@ -120,27 +120,16 @@ plt.show()
 #OBJECTIVE 4: Year-wise Trend Analysis
 year_analysis = data.groupby("Year")["DissolvedOxygen"].mean()
 plt.plot(year_analysis.index, year_analysis.values,
-         color='purple', linewidth=2, marker='o')  # added color, width, markers
+         color='purple', linewidth=2, marker='o')  
 plt.title("Year-wise Dissolved Oxygen Trend", color='darkblue')
 plt.xlabel("Year", color='green')
 plt.ylabel("Average DO", color='green')
-plt.grid(True, linestyle='--', alpha=0.6)  # optional but improves visuals
-plt.show()  #the graph is this way because their is no entry of the year 2015
+plt.grid(True, linestyle='--', alpha=0.6)  
+plt.show()
+#the graph is this way because their is no entry of the year 2015
 data["Year"].value_counts() #tells me how many entries per year
 
 #OBJECTIVE 5: Outlier Detection using Boxplot
-# Dissolved Oxygen Boxplot
-plt.boxplot(data["DissolvedOxygen"].dropna(),
-            patch_artist=True,
-            boxprops=dict(facecolor='lightblue', linewidth=4),
-            whiskerprops=dict(color='green', linewidth=4),
-            capprops=dict(color='blue', linewidth=4),
-            medianprops=dict(color='red', linewidth=4))
-plt.title("Boxplot of Dissolved Oxygen", color='darkblue')
-plt.ylabel("Dissolved Oxygen", color='green')
-plt.show()
-
-
 # pH Boxplot
 plt.boxplot(data["pH"].dropna(),
             patch_artist=True,
@@ -150,6 +139,17 @@ plt.boxplot(data["pH"].dropna(),
             medianprops=dict(color='red', linewidth=4))
 plt.title("Boxplot of pH", color='darkblue')
 plt.ylabel("pH", color='green')
+plt.show()
+
+# Dissolved Oxygen Boxplot
+plt.boxplot(data["DissolvedOxygen"].dropna(),
+            patch_artist=True,
+            boxprops=dict(facecolor='lightblue', linewidth=4),
+            whiskerprops=dict(color='green', linewidth=4),
+            capprops=dict(color='blue', linewidth=4),
+            medianprops=dict(color='red', linewidth=4))
+plt.title("Boxplot of Dissolved Oxygen", color='darkblue')
+plt.ylabel("Dissolved Oxygen", color='green')
 plt.show()
 
 
