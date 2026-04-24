@@ -26,7 +26,7 @@ print(data.columns)
 #DELETING UNWANTED COLUMNS
 data = data.drop(columns=["WhoVerified", "DateVerified", "Unit_Id","Air Temp (?F)","AirTemp (C)"])
 
-#REMOVING DUPLICATE COLUMS
+#REMOVING DUPLICATE ROWS
 duplicates = data.duplicated().sum()
 data = data.drop_duplicates()
 print("Duplicate rows:", duplicates)
