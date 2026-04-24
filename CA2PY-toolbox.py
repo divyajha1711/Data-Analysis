@@ -10,10 +10,10 @@ from sklearn.metrics import mean_squared_error
 data = pd.read_csv(r"C:\Users\DELL\Downloads\BKB_WaterQualityData_2020084.csv")
 
 # VIEW DATA STRUCTURE AND SUMMARY
-print(data.info())
+print(data.info())#CHECK DATATYES
 print(data.describe())
 print(data.head()) #helps to load the first 5 rows of the dataset
-print(data.info()) #CHECK DATATYES
+
 
 # CHECK THE TOTAL NUMBER OF ROWS AND COLUMNS 
 print("Number of rows and columns:",data.shape)
